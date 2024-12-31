@@ -5,6 +5,7 @@ matplotlib
 seaborn
 ipykernel
 flask
+flask_cors
 docker
 dill
 -e .
