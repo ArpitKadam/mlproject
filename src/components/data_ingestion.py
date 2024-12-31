@@ -1,60 +1,55 @@
 import os
 import sys
-import pandas as pd
-import numpy as np
-from datetime import datetime
-from src.logger import logging
 from src.exception import CustomException
-from dataclasses import dataclass
+from src.logger import logging
+import pandas as pd
+
 from sklearn.model_selection import train_test_split
+from dataclasses import dataclass
+
+from src.components.data_transformation import DataTransformation
+from src.components.data_transformation import DataTransformationConfig
 
 @dataclass
 class DataIngestionConfig:
-    train_data_path: str = os.path.join('artifacts', 'train.csv')
-    test_data_path: str = os.path.join('artifacts', 'test.csv')
-    raw_data_path: str = os.path.join('artifacts', 'raw_data.csv')
+    train_data_path: str=os.path.join('artifacts',"train.csv")
+    test_data_path: str=os.path.join('artifacts',"test.csv")
+    raw_data_path: str=os.path.join('artifacts',"data.csv")
 
 class DataIngestion:
     def __init__(self):
-        self.ingestion_config = DataIngestionConfig()
+        self.ingestion_config=DataIngestionConfig()
 
     def initiate_data_ingestion(self):
+        logging.info("Entered the data ingestion method or component")
         try:
-            logging.info('Data Ingestion Started')
-            df = pd.read_csv("./data/stud.csv")
-            logging.info("Data Read Successfully")
-            logging.info("Data Shape: {}".format(df.shape))
-            logging.info("Data Columns: {}".format(df.columns))
-            logging.info("Data Head: {}".format(df.head()))
-            logging.info("Data Info: {}".format(df.info()))
-            logging.info("Data Describe: {}".format(df.describe()))
+            df=pd.read_csv('.\\data\\stud.csv')
+            logging.info('Read the dataset as dataframe')
 
-            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
-            df.to_csv(self.ingestion_config.raw_data_path, index=False)
-            logging.info('Data Saved in Artifacts folder Successfully')
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
 
-            logging.info('Train Test Split Started')
-            train, test = train_test_split(df, test_size=0.2, random_state=42)
-            logging.info('Train Shape: {}'.format(train.shape))
-            logging.info('Test Shape: {}'.format(test.shape))
-            logging.info('Saving Train and Test Data in Artifacts folder')
-            train.to_csv(self.ingestion_config.train_data_path, index=False, header=True)
-            test.to_csv(self.ingestion_config.test_data_path, index=False, header=True)
-            logging.info('Train and Test Data Saved Successfully')
-            logging.info('Train Test Split Completed')
+            df.to_csv(self.ingestion_config.raw_data_path,index=False,header=True)
 
-            logging.info('Data Ingestion Completed')
+            logging.info("Train test split initiated")
+            train_set,test_set=train_test_split(df,test_size=0.2,random_state=42)
+
+            train_set.to_csv(self.ingestion_config.train_data_path,index=False,header=True)
+
+            test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
+
+            logging.info("Inmgestion of the data iss completed")
 
             return(
                 self.ingestion_config.train_data_path,
-                self.ingestion_config.test_data_path,
-                self.ingestion_config.raw_data_path
-            )
+                self.ingestion_config.test_data_path
 
+            )
         except Exception as e:
-            logging.info(f'Error in Data Ingestion: {str(e)}')
-            raise CustomException(f'Error in Data Ingestion: {str(e)}')
+            raise CustomException(e,sys)
         
-if __name__ == '__main__':
-    obj = DataIngestion()
-    obj.initiate_data_ingestion()
+if __name__=="__main__":
+    obj=DataIngestion()
+    train_data,test_data=obj.initiate_data_ingestion()
+
+    data_transformation=DataTransformation()
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
