@@ -5,4 +5,6 @@ matplotlib
 seaborn
 ipykernel
 xgboost
+flask
+flask-cors
 -e .

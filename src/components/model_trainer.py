@@ -17,7 +17,7 @@ from dataclasses import dataclass
 @dataclass
 class ModelTrainerConfig:
     trained_model_file_path: str=os.path.join('artifacts',"model.pkl")
-    model_metrics_path: str=os.path.join('artifacts',"model_metrics.txt")
+    model_metrics_path: str=os.path.join('artifacts',"model_metrics.csv")
 
 class ModelTrainer:
     def __init__(self):
