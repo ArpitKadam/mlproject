@@ -5,7 +5,7 @@ from flask import Flask, request, render_template
 from flask_cors import CORS
 from sklearn.preprocessing import StandardScaler
 from src.pipeline.predict_pipeline import PredictPipeline, CustomData
-
+from src.logger import logging
 
 app = Flask(__name__)
 
@@ -27,7 +27,9 @@ def predict_datapoint():
         print(pred_df)
 
         predict_pipeline = PredictPipeline()
-        results = predict_pipeline.predict(pred_df)  
+        results = predict_pipeline.predict(pred_df) 
+        logging.info("The entered data is: ")
+        logging.info(f"Predicted results: {results}") 
         return render_template('home.html', results=results[0])
     
 if __name__ == '__main__':

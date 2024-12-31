@@ -1,0 +1,95 @@
+[ 2025-01-01 02:32:39,900 ] 27 root - INFO - Data ingestion initiated
+[ 2025-01-01 02:32:39,922 ] 30 root - INFO - Read the dataset as dataframe
+[ 2025-01-01 02:32:39,931 ] 35 root - INFO - Train test split initiated
+[ 2025-01-01 02:32:39,935 ] 37 root - INFO - Train test split completed
+[ 2025-01-01 02:32:39,939 ] 39 root - INFO - Train data saved
+[ 2025-01-01 02:32:39,939 ] 40 root - INFO - Train data shape: (800, 8)
+[ 2025-01-01 02:32:39,941 ] 42 root - INFO - Test data saved
+[ 2025-01-01 02:32:39,941 ] 43 root - INFO - Test data shape: (200, 8)
+[ 2025-01-01 02:32:39,942 ] 44 root - INFO - Data ingestion completed
+[ 2025-01-01 02:32:39,942 ] 73 root - INFO - Data transformation initiated
+[ 2025-01-01 02:32:39,942 ] 74 root - INFO - Reading train and test data
+[ 2025-01-01 02:32:39,971 ] 77 root - INFO - Read train and test data completed
+[ 2025-01-01 02:32:39,972 ] 79 root - INFO - Obtaining preprocessing object
+[ 2025-01-01 02:32:39,972 ] 55 root - INFO - Categorical columns: ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
+[ 2025-01-01 02:32:39,973 ] 56 root - INFO - Numerical columns: ['writing_score', 'reading_score']
+[ 2025-01-01 02:32:39,974 ] 87 root - INFO - Train data split into input features and target feature
+[ 2025-01-01 02:32:39,974 ] 88 root - INFO - Train data input feature shape: (800, 7)
+[ 2025-01-01 02:32:39,974 ] 89 root - INFO - Train data target feature shape: (800,)
+[ 2025-01-01 02:32:39,975 ] 93 root - INFO - Test data split into input features and target feature
+[ 2025-01-01 02:32:39,975 ] 94 root - INFO - Test data input feature shape: (200, 7)
+[ 2025-01-01 02:32:39,976 ] 95 root - INFO - Test data target feature shape: (200,)
+[ 2025-01-01 02:32:39,976 ] 96 root - INFO - Applying preprocessing object on training dataframe and testing dataframe.
+[ 2025-01-01 02:32:40,008 ] 106 root - INFO - Data Transformation completed.
+[ 2025-01-01 02:32:40,011 ] 28 root - INFO - Model trainer initiated
+[ 2025-01-01 02:32:40,011 ] 115 root - INFO - Training Linear Regression
+[ 2025-01-01 02:32:40,043 ] 118 root - INFO - Prediction completed for Linear Regression
+[ 2025-01-01 02:32:40,046 ] 122 root - INFO - Metrics calculated for Linear Regression
+[ 2025-01-01 02:32:40,046 ] 123 root - INFO - R2 Score: 0.8804332983749565
+[ 2025-01-01 02:32:40,046 ] 124 root - INFO - Mean Squared Error: 29.095169866715473
+[ 2025-01-01 02:32:40,046 ] 125 root - INFO - Mean Absolute Error: 4.21476314247485
+[ 2025-01-01 02:32:40,047 ] 115 root - INFO - Training Lasso
+[ 2025-01-01 02:32:40,077 ] 118 root - INFO - Prediction completed for Lasso
+[ 2025-01-01 02:32:40,081 ] 122 root - INFO - Metrics calculated for Lasso
+[ 2025-01-01 02:32:40,081 ] 123 root - INFO - R2 Score: 0.8820591282660359
+[ 2025-01-01 02:32:40,083 ] 124 root - INFO - Mean Squared Error: 28.699543022348024
+[ 2025-01-01 02:32:40,083 ] 125 root - INFO - Mean Absolute Error: 4.175515408759964
+[ 2025-01-01 02:32:40,083 ] 115 root - INFO - Training Ridge
+[ 2025-01-01 02:32:40,115 ] 118 root - INFO - Prediction completed for Ridge
+[ 2025-01-01 02:32:40,119 ] 122 root - INFO - Metrics calculated for Ridge
+[ 2025-01-01 02:32:40,120 ] 123 root - INFO - R2 Score: 0.8804480338276083
+[ 2025-01-01 02:32:40,120 ] 124 root - INFO - Mean Squared Error: 29.09158416524393
+[ 2025-01-01 02:32:40,120 ] 125 root - INFO - Mean Absolute Error: 4.214518935832993
+[ 2025-01-01 02:32:40,120 ] 115 root - INFO - Training ElasticNet
+[ 2025-01-01 02:32:40,204 ] 118 root - INFO - Prediction completed for ElasticNet
+[ 2025-01-01 02:32:40,207 ] 122 root - INFO - Metrics calculated for ElasticNet
+[ 2025-01-01 02:32:40,207 ] 123 root - INFO - R2 Score: 0.8801873068709422
+[ 2025-01-01 02:32:40,207 ] 124 root - INFO - Mean Squared Error: 29.15502904571592
+[ 2025-01-01 02:32:40,207 ] 125 root - INFO - Mean Absolute Error: 4.199752228164975
+[ 2025-01-01 02:32:40,207 ] 115 root - INFO - Training KNeighborsRegressor
+[ 2025-01-01 02:32:40,653 ] 118 root - INFO - Prediction completed for KNeighborsRegressor
+[ 2025-01-01 02:32:40,655 ] 122 root - INFO - Metrics calculated for KNeighborsRegressor
+[ 2025-01-01 02:32:40,655 ] 123 root - INFO - R2 Score: 0.5394983299840633
+[ 2025-01-01 02:32:40,655 ] 124 root - INFO - Mean Squared Error: 112.05773957900601
+[ 2025-01-01 02:32:40,655 ] 125 root - INFO - Mean Absolute Error: 7.947253210611166
+[ 2025-01-01 02:32:40,655 ] 115 root - INFO - Training DecisionTreeRegressor
+[ 2025-01-01 02:32:43,266 ] 118 root - INFO - Prediction completed for DecisionTreeRegressor
+[ 2025-01-01 02:32:43,267 ] 122 root - INFO - Metrics calculated for DecisionTreeRegressor
+[ 2025-01-01 02:32:43,267 ] 123 root - INFO - R2 Score: 0.7950857420805246
+[ 2025-01-01 02:32:43,268 ] 124 root - INFO - Mean Squared Error: 49.863507659312475
+[ 2025-01-01 02:32:43,268 ] 125 root - INFO - Mean Absolute Error: 5.525729341736695
+[ 2025-01-01 02:32:43,268 ] 115 root - INFO - Training RandomForestRegressor
+[ 2025-01-01 02:35:12,051 ] 118 root - INFO - Prediction completed for RandomForestRegressor
+[ 2025-01-01 02:35:12,052 ] 122 root - INFO - Metrics calculated for RandomForestRegressor
+[ 2025-01-01 02:35:12,052 ] 123 root - INFO - R2 Score: 0.8583174727046778
+[ 2025-01-01 02:35:12,052 ] 124 root - INFO - Mean Squared Error: 34.476799500000006
+[ 2025-01-01 02:35:12,052 ] 125 root - INFO - Mean Absolute Error: 4.50895
+[ 2025-01-01 02:35:12,052 ] 115 root - INFO - Training GradientBoostingRegressor
+[ 2025-01-01 02:36:30,890 ] 118 root - INFO - Prediction completed for GradientBoostingRegressor
+[ 2025-01-01 02:36:30,893 ] 122 root - INFO - Metrics calculated for GradientBoostingRegressor
+[ 2025-01-01 02:36:30,893 ] 123 root - INFO - R2 Score: 0.8235418061524276
+[ 2025-01-01 02:36:30,893 ] 124 root - INFO - Mean Squared Error: 42.93905455775813
+[ 2025-01-01 02:36:30,893 ] 125 root - INFO - Mean Absolute Error: 5.0385184725763565
+[ 2025-01-01 02:36:30,894 ] 115 root - INFO - Training AdaBoostRegressor
+[ 2025-01-01 02:36:34,122 ] 118 root - INFO - Prediction completed for AdaBoostRegressor
+[ 2025-01-01 02:36:34,124 ] 122 root - INFO - Metrics calculated for AdaBoostRegressor
+[ 2025-01-01 02:36:34,124 ] 123 root - INFO - R2 Score: 0.8478212875143376
+[ 2025-01-01 02:36:34,124 ] 124 root - INFO - Mean Squared Error: 37.03092441032112
+[ 2025-01-01 02:36:34,124 ] 125 root - INFO - Mean Absolute Error: 4.651465560991622
+[ 2025-01-01 02:36:34,124 ] 115 root - INFO - Training BaggingRegressor
+[ 2025-01-01 02:36:43,803 ] 118 root - INFO - Prediction completed for BaggingRegressor
+[ 2025-01-01 02:36:43,805 ] 122 root - INFO - Metrics calculated for BaggingRegressor
+[ 2025-01-01 02:36:43,806 ] 123 root - INFO - R2 Score: 0.8533389228858979
+[ 2025-01-01 02:36:43,806 ] 124 root - INFO - Mean Squared Error: 35.688271847222225
+[ 2025-01-01 02:36:43,806 ] 125 root - INFO - Mean Absolute Error: 4.557675000000001
+[ 2025-01-01 02:36:43,806 ] 115 root - INFO - Training ExtraTreesRegressor
+[ 2025-01-01 02:39:39,155 ] 118 root - INFO - Prediction completed for ExtraTreesRegressor
+[ 2025-01-01 02:39:39,157 ] 122 root - INFO - Metrics calculated for ExtraTreesRegressor
+[ 2025-01-01 02:39:39,157 ] 123 root - INFO - R2 Score: 0.8409136672706945
+[ 2025-01-01 02:39:39,157 ] 124 root - INFO - Mean Squared Error: 38.711813668216834
+[ 2025-01-01 02:39:39,157 ] 125 root - INFO - Mean Absolute Error: 4.699536287601287
+[ 2025-01-01 02:39:39,157 ] 132 root - INFO - Saving model metrics
+[ 2025-01-01 02:39:39,201 ] 136 root - INFO - Model metrics saved
+[ 2025-01-01 02:39:39,201 ] 138 root - INFO - Saving model
+[ 2025-01-01 02:39:39,205 ] 141 root - INFO - Model saved successfully
+[ 2025-01-01 02:39:39,206 ] 143 root - INFO - Model trainer completed

@@ -4,7 +4,7 @@ scikit-learn
 matplotlib
 seaborn
 ipykernel
-xgboost
 flask
-flask-cors
+docker
+dill
 -e .

@@ -1,0 +1,6 @@
+[ 2025-01-01 02:43:01,719 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2025-01-01 02:43:01,724 ] 97 werkzeug - INFO -  * Debugger PIN: 233-097-082
+[ 2025-01-01 02:43:13,567 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Jan/2025 02:43:13] "GET / HTTP/1.1" 200 -
+[ 2025-01-01 02:43:38,417 ] 31 root - INFO - The entered data is: 
+[ 2025-01-01 02:43:38,418 ] 32 root - INFO - Predicted results: [46.36739683]
+[ 2025-01-01 02:43:38,419 ] 97 werkzeug - INFO - 127.0.0.1 - - [01/Jan/2025 02:43:38] "POST / HTTP/1.1" 200 -

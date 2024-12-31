@@ -4,3 +4,6 @@ scikit-learn
 matplotlib
 seaborn
 ipykernel
+flask
+docker
+dill

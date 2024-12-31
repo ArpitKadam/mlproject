@@ -11,3 +11,6 @@ Requires-Dist: scikit-learn
 Requires-Dist: matplotlib
 Requires-Dist: seaborn
 Requires-Dist: ipykernel
+Requires-Dist: flask
+Requires-Dist: docker
+Requires-Dist: dill
