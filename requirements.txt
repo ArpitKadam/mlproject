@@ -5,5 +5,4 @@ matplotlib
 seaborn
 ipykernel
 xgboost
-dill
 -e .

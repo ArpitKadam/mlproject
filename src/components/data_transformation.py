@@ -70,13 +70,13 @@ class DataTransformation:
     def initiate_data_transformation(self,train_path,test_path):
 
         try:
+            logging.info("Data transformation initiated")
+            logging.info("Reading train and test data")
             train_df=pd.read_csv(train_path)
             test_df=pd.read_csv(test_path)
-
             logging.info("Read train and test data completed")
 
             logging.info("Obtaining preprocessing object")
-
             preprocessing_obj=self.get_data_transformer_object()
 
             target_column_name="math_score"
@@ -84,10 +84,15 @@ class DataTransformation:
 
             input_feature_train_df=train_df.drop(columns=[target_column_name],axis=1)
             target_feature_train_df=train_df[target_column_name]
+            logging.info("Train data split into input features and target feature")
+            logging.info(f"Train data input feature shape: {input_feature_train_df.shape}")
+            logging.info(f"Train data target feature shape: {target_feature_train_df.shape}")
 
             input_feature_test_df=test_df.drop(columns=[target_column_name],axis=1)
             target_feature_test_df=test_df[target_column_name]
-
+            logging.info("Test data split into input features and target feature")
+            logging.info(f"Test data input feature shape: {input_feature_test_df.shape}")
+            logging.info(f"Test data target feature shape: {target_feature_test_df.shape}")
             logging.info("Applying preprocessing object on training dataframe and testing dataframe.")
 
             input_feature_train_arr=preprocessing_obj.fit_transform(input_feature_train_df)
@@ -97,6 +102,10 @@ class DataTransformation:
                 input_feature_train_arr, np.array(target_feature_train_df)
             ]
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
+
+            logging.info("Data Transformation completed.")
+
+            save_object(obj=preprocessing_obj, file_path=self.data_transformation_config.preprocessor_obj_file_path)
 
             return (
                 train_arr,
